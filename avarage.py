@@ -9,8 +9,6 @@
 
 import sys, os
 
-
-
 # Menu
 def main_menu():
     print("Bem vindo,\n")
@@ -73,7 +71,6 @@ def inserir_aluno():
 
 
 # Listar Aluno
-
 def listar_aluno():
     os.system('cls')
     list_status = []
@@ -92,9 +89,7 @@ def listar_aluno():
     input("Pressione <enter> para continuar")
     main_menu()
 
-
 # Deletar Aluno
-
 def deletar_aluno():
     listar_aluno_total('A')
     list_status = []
@@ -120,7 +115,6 @@ def deletar_aluno():
 
     input("Digite <enter> para continuar")
     main_menu()
-
 
 # Inserir nota
 #LAYOUT {'id': ['nome', stats, 'nota1', 'nota2', 'nota3', 'media', ]}
@@ -157,7 +151,6 @@ def inserir_nota():
     elif id_aluno.lower() == 'z':
         main_menu()
 
-
 #Opção de listar alunos
 
 def listar_aluno_total(status):
@@ -171,7 +164,6 @@ def listar_aluno_total(status):
         if lista_aluno[key][1] == status.upper():
             print(str(key) + '- ' + lista_aluno[key][0])
 
-     
 
 def media():
 
@@ -209,8 +201,7 @@ menu_actions = {
     '0': exit,
 }
 
-#LAYOUT {'id': ['nome', 'nota1', 'nota2', 'nota3', 'media']}
-
+#LAYOUT {'id': ['nome', stats, 'nota1', 'nota2', 'nota3', 'media']}
 
 lista_aluno = {
     1: ['Rodrigo', 'A', 10, 10, 10,10 ],
@@ -223,16 +214,6 @@ indice_aluno = 1
 indice_nota = 1
 
 main_menu()
-
-
-
-
-
-
-
-
-
-
 
 
 
