@@ -8,37 +8,40 @@
 # media da turma
 
 import sys, os
+import sql
 
 # Menu
-def main_menu():
-    print("Bem vindo,\n")
-    print("Escolha as opções:")
-    print("1. Inserir aluno")
-    print("2. Deletar aluno")
-    print("3. Listar aluno")
-    print("4. Inserir Nota")
-    print("5. Média")
-    print("\n0. Quit")
-    choice = input(" >>  ")
-    exec_menu(choice)
+class Menu:
 
-    return
+    def main_menu():
+        print("Bem vindo,\n")
+        print("Escolha as opções:")
+        print("1. Inserir aluno")
+        print("2. Deletar aluno")
+        print("3. Listar aluno")
+        print("4. Inserir Nota")
+        print("5. Média")
+        print("\n0. Quit")
+        choice = input(" >>  ")
+        exec_menu(choice)
+
+        return
 
 
 # Executa o Menu1
-def exec_menu(choice):
-    os.system('cls')
-    ch = choice.lower()
-    if ch == '':
-        menu_actions['main_menu']()
-    else:
-        try:
-            menu_actions[ch]()
-        except KeyError:
-
-            print("Invalid selection, please try again.\n")
+    def exec_menu(choice):
+        os.system('cls')
+        ch = choice.lower()
+        if ch == '':
             menu_actions['main_menu']()
-    return
+        else:
+            try:
+                menu_actions[ch]()
+            except KeyError:
+
+                print("Invalid selection, please try again.\n")
+                menu_actions['main_menu']()
+        return
 
 
 # Inserir o aluno
@@ -72,7 +75,8 @@ def inserir_aluno():
 
 # Listar Aluno
 def listar_aluno():
-    os.system('cls')
+   
+   
     list_status = []
 
     status = input('Deseja listar os alunos (A)tivos ou (I)nativos?')
@@ -213,26 +217,8 @@ lista_aluno = {
 indice_aluno = 1
 indice_nota = 1
 
+
+
 main_menu()
 
 
-
-'turma_um.pesquisar_aluno("Rodrigo")'
-
-
-class Turma():
-    aluno_nome = list()
-
-    def inserir_aluno(self, nome):
-        self.aluno_nome.append(nome)
-
-    def listar_aluno(self):
-        print(self.aluno_nome)
-
-    def pesquisar_aluno(self, nome):
-        try:
-            pos = self.aluno_nome.index(nome)
-
-            print("O nome procurado foi: {} e o indice dele é: {} ".format(self.aluno_nome[pos], pos))
-        except ValueError:
-            print("Nome não localizado na lista")
