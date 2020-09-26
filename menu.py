@@ -53,6 +53,9 @@ class Menu:
                 self.menu_actions['main_menu']()
         return
 
+
+
+
     def insert_aluno(self):
         os.system('cls')
         while True:
